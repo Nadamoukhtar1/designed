@@ -1,0 +1,35 @@
+import json
+
+class UserProfile:
+    def __init__(self, name, measurements, skin_tone, profile_picture):
+        self.name = name
+        self.measurements = measurements  # Dictionary with key as body part and value as measurement
+        self.skin_tone = skin_tone
+        self.profile_picture = profile_picture
+
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "measurements": self.measurements,
+            "skin_tone": self.skin_tone,
+            "profile_picture": self.profile_picture
+        }
+
+    def save_profile(self, filepath):
+        with open(filepath, 'w') as file:
+            json.dump(self.to_dict(), file)
+
+# Example usage
+if __name__ == "__main__":
+    user = UserProfile(
+        name="John Doe",
+        measurements={
+            "height": 180,
+            "waist": 32,
+            "chest": 38
+        },
+        skin_tone="medium",
+        profile_picture="path/to/profile.jpg"
+    )
+
+    user.save_profile("user_profile.json")
