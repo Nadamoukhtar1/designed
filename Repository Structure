@@ -1,0 +1,9 @@
+git add .
+AI-Outfit-Recommender/
+│
+├── profile_management.py
+├── face_detection.py
+├── outfit_recommendation.py
+├── ar_display.py
+├── store_integration.py
+└── README.md
